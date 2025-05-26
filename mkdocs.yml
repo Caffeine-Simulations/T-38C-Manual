@@ -1,0 +1,21 @@
+site_name: "DCS: T-38C Manual"
+theme: 
+    name: readthedocs
+    color_mode: dark
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.blocks.caption
+
+
+nav:
+  - Home: index.md
+  - Avionics:
+      - MFD: avionics/mfd.md
+      - DTC: avionics/dtc.md
+  - Extras:
+      - Livery Customization: extras/paintkit.md      
+      - Navigraph: extras/navigraph.md
+  - Appendices:
+      - Appendix B: appendices/appendix_b.md
