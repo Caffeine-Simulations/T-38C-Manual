@@ -13,8 +13,9 @@ nav:
   - Home: index.md
   - Avionics:
       - MFD: avionics/mfd.md
-      - DTC: avionics/dtc.md
   - Extras:
+      - External DTC Folder: extras/dtc-folder.md
+      - Mission Editor: extras/mission_editor.md
       - Livery Customization: extras/paintkit.md      
       - Navigraph: extras/navigraph.md
   - Appendices:
