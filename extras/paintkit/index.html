@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>DTC - DCS: T-38C Manual</title>
+    <title>Livery Customization - DCS: T-38C Manual</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "DTC";
-        var mkdocs_page_input_path = "avionics\\dtc.md";
+        var mkdocs_page_name = "Livery Customization";
+        var mkdocs_page_input_path = "extras\\paintkit.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,10 +44,25 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Avionics</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../avionics/mfd/">MFD</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Extras</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">DTC</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../dtc-folder/">External DTC Folder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mission_editor/">Mission Editor</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Livery Customization</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#paintkit">Paintkit</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3d-model-customizations">3D model customizations</a>
+    </li>
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../navigraph/">Navigraph</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Appendices</span></p>
@@ -69,8 +84,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Avionics</li>
-      <li class="breadcrumb-item active">DTC</li>
+          <li class="breadcrumb-item">Extras</li>
+      <li class="breadcrumb-item active">Livery Customization</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -79,32 +94,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="dtclua">DTC.lua</h1>
-<p>DTC.lua allows you to configure various settings automatically, Such as which HUD mode is default, Callsign, Warning modes, and various other configurable settings. This only changes the defaults, all values can still be changed using the UFCP.
-Manually Editing DTC.lua
-Editing the DTC.lua is very basic, simply find the values you want to change, and follow the instructions in the comments. ONLY change the value after the equals (=).</p>
-<p>If you make an error, and the DTC.lua fails to load, simply delete the file and reload the jet, a new working file will be generated, this will be verified by a warning in the top right of the screen</p>
-<pre><code class="language-lua">local DTCData = {
-    [&quot;settings&quot;] = { -- format: [param_handle_name] = value
-        [&quot;ADSB_CALLSIGN&quot;] = &quot;ASPEN11&quot;, -- Callsign for ADS-B. max of 7 characters (e.g. ASPEN11)
-        [&quot;SQUAWK&quot;] = 1234,
-        -- TODO add VFR and EMERGENCY squawks here, these need to be set in the device too
-        [&quot;DDS_MODE&quot;] = 2, -- (HOTAS Button behaviour for PFR Swapping) 0 = HSD, 1 = SIT, 2 = BTH
-        -- TODO CDM Mode here
-        [&quot;ALT_WARN_MODE&quot;] = 0, -- (Altitude Warning Mode) 0 = &quot;BOTH&quot;, 1 = &quot;MSL&quot;, 2 = &quot;RALT&quot;, 3 = &quot;OFF&quot;}
-        [&quot;ALT_WARN_MSL&quot;] = 6000, -- last digit must be 0, between 0 and 50000
-        [&quot;ALT_WARN_RAD&quot;] = 250, -- last digit must be 0, between 0 and 5000
-        [&quot;HUD_MODE&quot;] = 0,       -- 0 = F-16, 1 = MIL-STD
-        -- TODO other hud page stuff
-    }
-}
-</code></pre>
+                <h1 id="livery-customization">Livery Customization</h1>
+<h2 id="paintkit">Paintkit</h2>
+<h2 id="3d-model-customizations">3D model customizations</h2>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../appendices/appendix_b/" class="btn btn-neutral float-right" title="Appendix B">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mission_editor/" class="btn btn-neutral float-left" title="Mission Editor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../navigraph/" class="btn btn-neutral float-right" title="Navigraph">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -127,10 +125,10 @@ Editing the DTC.lua is very basic, simply find the values you want to change, an
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../mission_editor/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../appendices/appendix_b/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../navigraph/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

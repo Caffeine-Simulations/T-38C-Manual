@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>External DTC Folder - DCS: T-38C Manual</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "External DTC Folder";
+        var mkdocs_page_input_path = "extras\\dtc-folder.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> DCS: T-38C Manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Avionics</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../avionics/mfd/">MFD</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Extras</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">External DTC Folder</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#folder-structure">Folder Structure</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dest-point-database">DEST Point Database</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#flight-plan-database">Flight Plan Database</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#icao-point-database">ICAO Point Database</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#training-zone-database">Training Zone Database</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dtclua">DTC.lua</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tcaslua">TCAS.lua</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mission_editor/">Mission Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../paintkit/">Livery Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../navigraph/">Navigraph</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Appendices</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../appendices/appendix_b/">Appendix B</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">DCS: T-38C Manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Extras</li>
+      <li class="breadcrumb-item active">External DTC Folder</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="external-dtc-folder">External DTC Folder</h1>
+<p>The first time you spawn in the T-38C, several files will be generated in the <code>Saved Games/DCS_T38C</code> directory. These files allow a the user to configure a preset database to standardise the configuration of the jet each time you load in. </p>
+<p>For Virtual Squadrons, your instructor pilots will be able to create preset databases for your servers, then send them out to your students, allowing you to build a curriculum of sorties, with minimal effort.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The first time you load into the jet on a new map, it will also generate new sub folders for each datatype. This will produce warnings in the top right corner, but they can be safely ignored.</p>
+</div>
+<h2 id="folder-structure">Folder Structure</h2>
+<p>File paths of the folders.<br />
+<code>&lt;Map Name&gt;</code> will be substituted with <code>Nevada</code> or <code>MarianaIslands</code> etc. depending on the map currently in use.</p>
+<p><strong>DEST Point Database:</strong><br />
+<code>DEST-FPL DATABASE/&lt;Map Name&gt;/DEST.lua</code><br />
+<strong>Flight Plan Database:</strong><br />
+<code>DEST-FPL DATABASE/&lt;Map Name&gt;/FPL.lua</code> TODO this isn't implemented, remove when needed<br />
+<strong>ICAO Database:</strong><br />
+<code>ICAO DATABASE/&lt;Map Name&gt;/ICAO.lua</code><br />
+<strong>Training Zone Database:</strong><br />
+<code>Training Zones/&lt;Map Name&gt;/ZONES.lua</code>  TODO no fly zones???<br />
+<strong>DTC.lua</strong><br />
+<code>DTC.lua</code><br />
+<strong>TCAS.lua</strong><br />
+<code>TCAS.lua</code></p>
+<hr />
+<h2 id="dest-point-database">DEST Point Database</h2>
+<p>Creating a <code>DEST-FPL DATABASE/&lt;Map Name&gt;/DEST.lua</code> file using the data below will allow you to add custom predefined waypoints. To add a new waypoint, copy the template below, and edit the number inside the square brackets (Waypoint 001 can be set using <code>[1]</code> etc).</p>
+<p>Make sure to follow the DEST database conventions in the table here. TODO link to table with DEST points</p>
+<pre><code class="language-lua">local DEST_TABLE = {
+    -- 0/000 cannot be set, since it is the EGI align point
+    -- 1 == 001, this conversion happens automatically
+    -- 611-649 also cannot be set, as per the real jet
+    [13] = {
+        [&quot;lat&quot;] = 36.38759,
+        [&quot;lon&quot;] = -115.34516,
+        [&quot;alt&quot;] = 1568
+    },
+    [599] = {
+        [&quot;lat&quot;] = 36.58391,
+        [&quot;lon&quot;] = -115.67235,
+        [&quot;alt&quot;] = 1254
+    },
+}
+
+-- these must be present, leave them at the bottom of the file
+local function get_dest_table()
+    return DEST_TABLE
+end
+
+return {
+    get_dest_table = get_dest_table,
+}
+</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not set point 0 (000) as this is set automatically when you load in/align the EGI<br />
+Waypoints 611-649 are not supported by the jet, use other numbers.</p>
+</div>
+<hr />
+<h2 id="flight-plan-database">Flight Plan Database</h2>
+<p>TODO, implementation needed</p>
+<hr />
+<h2 id="icao-point-database">ICAO Point Database</h2>
+<p>TODO</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DM Hayds_93 on discord about customizing this</p>
+</div>
+<hr />
+<h2 id="training-zone-database">Training Zone Database</h2>
+<p>TODO, implementation needed</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Training Zones can also be configured in the mission editor TODO add link</p>
+</div>
+<hr />
+<h2 id="dtclua">DTC.lua</h2>
+<p>DTC.lua allows you to configure various settings automatically, Such as which HUD mode is default, Callsign, Warning modes, and various other configurable settings. This only changes the defaults, all values can still be changed using the UFCP.</p>
+<p>Editing the DTC.lua is very basic, simply find the values you want to change, and follow the instructions in the comments. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ONLY change the value after the equals (=).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you make an error, and the DTC.lua fails to load, simply delete the file and reload the jet, a new working file will be generated, this will be verified by a warning in the top right of the screen</p>
+</div>
+<pre><code class="language-lua">-- here is an example DTC.lua TODO flesh this out later in the process
+local DTCData = {
+    [&quot;settings&quot;] = { -- format: [param_handle_name] = value
+        [&quot;ADSB_CALLSIGN&quot;] = &quot;ASPEN11&quot;, -- Callsign for ADS-B. max of 7 characters (e.g. ASPEN11)
+        [&quot;SQUAWK&quot;] = 1234,
+        -- TODO add VFR and EMERGENCY squawks here, these need to be set in the device too
+        [&quot;DDS_MODE&quot;] = 2, -- (HOTAS Button behaviour for PFR Swapping) 0 = HSD, 1 = SIT, 2 = BTH
+        -- TODO CDM Mode here
+        [&quot;ALT_WARN_MODE&quot;] = 0, -- (Altitude Warning Mode) 0 = &quot;BOTH&quot;, 1 = &quot;MSL&quot;, 2 = &quot;RALT&quot;, 3 = &quot;OFF&quot;}
+        [&quot;ALT_WARN_MSL&quot;] = 6000, -- last digit must be 0, between 0 and 50000
+        [&quot;ALT_WARN_RAD&quot;] = 250, -- last digit must be 0, between 0 and 5000
+        [&quot;HUD_MODE&quot;] = 0,       -- 0 = F-16, 1 = MIL-STD
+        -- TODO other hud page stuff
+    }
+}
+</code></pre>
+<hr />
+<h2 id="tcaslua">TCAS.lua</h2>
+<p>The TCAS in our T-38C works on the assumption that planes the user adds to this file have ADSB/Mode C out on at all times. Customize this list to change the behaviour of what will show up when TCAS TA/RA is selected.</p>
+<p>The <code>TCAS.lua</code> file is generated automatically with a premade database. this file is used to filter which planes show up on TCAS. This allows for you to add your own, or other mods, although we will try to add as many as possible.</p>
+<p>Offical module names can be found <a href="https://github.com/pschiel/opsdcs/blob/main/opsdcs-setup/dcs-module-names.md" target="_blank">here</a>.</p>
+<pre><code class="language-lua">local TCAS = {
+    &quot;T-38C&quot;,
+    &quot;T-38A&quot;,
+    &quot;F-15ESE&quot;,
+    &quot;F-15C&quot;,
+    &quot;F-16C_50&quot;,
+    &quot;A-10C_2&quot;,
+    &quot;CH-47Fbl1&quot;,
+    -- Add more planes here
+}
+
+-- Leave these untouched
+local function loadTCAS()
+    return TCAS
+end
+
+return {
+    loadTCAS = loadTCAS
+}
+</code></pre>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../avionics/mfd/" class="btn btn-neutral float-left" title="MFD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mission_editor/" class="btn btn-neutral float-right" title="Mission Editor">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../avionics/mfd/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mission_editor/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

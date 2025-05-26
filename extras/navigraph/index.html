@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Navigraph - DCS: T-38C Manual</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Navigraph";
+        var mkdocs_page_input_path = "extras\\navigraph.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> DCS: T-38C Manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Avionics</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../avionics/mfd/">MFD</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Extras</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../dtc-folder/">External DTC Folder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mission_editor/">Mission Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../paintkit/">Livery Customization</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Navigraph</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#navigraph-charts">Navigraph Charts</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#simlink">Simlink</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#simbrief">SimBrief</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#acknowledgements">Acknowledgements</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Appendices</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../appendices/appendix_b/">Appendix B</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">DCS: T-38C Manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Extras</li>
+      <li class="breadcrumb-item active">Navigraph</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="navigraph-integration">Navigraph Integration</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Caffeine Simulations have been very fortunate to partner with and contribute to the integration of Navigraph with DCS to bring features commonly associated with MSFS and XPlane into not just the T-38C but to all Aircraft, Modules and Mods.</p>
+<p>T-38C Pilots fly with an Electronic Flight Bag (EFB) running apps like Foreflight to assist in navigation, flight planning, approach/departure charts, and much more. This can be replicated externally, even on a separate device like a tablet using the Navigraph Suite of applications</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Navigraph is a Paid service, more information can be found <a href="https://navigraph.com/" target="_blank">here</a>.</p>
+</div>
+<hr />
+<h2 id="navigraph-charts">Navigraph Charts</h2>
+<p>Navigraph Charts is an app that essentially replicates Foreflight, but in the Simulator environment. With a Navigraph Subscription, you can access charts, plan a flight, see your GPS position and various performance numbers (if using Simlink).</p>
+<p>The Charts App can be run on either the same device as your DCS install, or on a tablet, externally (for example attached to your thigh like a kneeboard).</p>
+<hr />
+<h2 id="simlink">Simlink</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This Feature is not yet available to testers<br />
+TODO remove this message when the time is right</p>
+</div>
+<p>With a Navigraph subscription, you will be able to download the Simlink application, and install the DCS Simlink Plugin into your Saved Games/Scripts/Hooks Directory. Then restart DCS, and the Simlink app, and you will see your position replicated in real time in Navigraph Charts.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature is not limited to the T-38C, and will work with all planes.</p>
+</div>
+<p>TODO add install guide</p>
+<figure>
+<p><img alt="DCS F10 Map" src="../images/image.png" /></p>
+<figcaption>
+<p>DCS F10 Map</p>
+</figcaption>
+</figure>
+<figure>
+<p><img alt="alt text" src="../images/image-1.png" /></p>
+<figcaption>
+<p>Player position reflected in Navigraph Charts using the DCS SimLink plugin</p>
+</figcaption>
+</figure>
+<hr />
+<h2 id="simbrief">SimBrief</h2>
+<p>SimBrief Functionality TBD (but planned) (will be limited to T-38C only)</p>
+<hr />
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>Caffeine Simulations are extremely grateful to the Navigraph team for assisting in the creation of the DCS Simlink plugin.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Caffeine Simulations are not paid to promote Navigraph, but we do use and endorse their products.</p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../paintkit/" class="btn btn-neutral float-left" title="Livery Customization"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../appendices/appendix_b/" class="btn btn-neutral float-right" title="Appendix B">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../paintkit/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../appendices/appendix_b/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

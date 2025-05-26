@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Appendix B - DCS: T-38C Manual</title>
+    <title>Mission Editor - DCS: T-38C Manual</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Appendix B";
-        var mkdocs_page_input_path = "appendices\\appendix_b.md";
+        var mkdocs_page_name = "Mission Editor";
+        var mkdocs_page_input_path = "extras\\mission_editor.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -49,23 +49,31 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Extras</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../extras/dtc-folder/">External DTC Folder</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../dtc-folder/">External DTC Folder</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../extras/mission_editor/">Mission Editor</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Mission Editor</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#radio-presets">Radio Presets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#flight-plans">Flight Plans</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#training-zones">Training Zones</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#low-level-routes">Low Level Routes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#no-fly-zones">No Fly Zones</a>
+    </li>
+    </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../extras/paintkit/">Livery Customization</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../paintkit/">Livery Customization</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../extras/navigraph/">Navigraph</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../navigraph/">Navigraph</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Appendices</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Appendix B</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#abreviations">Abreviations</a>
-    </li>
-    </ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../appendices/appendix_b/">Appendix B</a>
                   </li>
               </ul>
       </div>
@@ -82,8 +90,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Appendices</li>
-      <li class="breadcrumb-item active">Appendix B</li>
+          <li class="breadcrumb-item">Extras</li>
+      <li class="breadcrumb-item active">Mission Editor</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -92,84 +100,53 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="appendix-b">Appendix B</h1>
+                <h1 id="mission-editor-setup">Mission Editor Setup</h1>
+<h2 id="radio-presets">Radio Presets</h2>
+<p>All 80 radio presets (40 UHF and 40 VHF) are individually pre-programmable in the mission editor.</p>
+<p><strong>Step 1:</strong> Select the aircraft you wish to modify the presets for.<br />
+<strong>Step 2:</strong> Navigate to the radio menu (circled below)</p>
+<figure>
+<p><img alt="alt text" src="../images/radio-presets.png" /></p>
+<figcaption>
+<p>DCS Mission Editor Radio Preset editor</p>
+</figcaption>
+</figure>
+<p><strong>Step 3:</strong> Edit the UHF and VHF Radios as desired</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, the UHF Radios will be configured for KLSV (Nellis AFB) and the surrounding NTTR.</p>
+</div>
 <hr />
-<h2 id="abreviations">Abreviations</h2>
-<table>
-<thead>
-<tr>
-<th>Short</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BSA</td>
-<td>Basic Surface Attack</td>
-</tr>
-<tr>
-<td>BFM</td>
-<td>Basic Fighter Maneuvers</td>
-</tr>
-<tr>
-<td>A/A</td>
-<td>Air to Air</td>
-</tr>
-<tr>
-<td>A/G</td>
-<td>Air to Ground</td>
-</tr>
-<tr>
-<td>CCIP</td>
-<td>Constantly Computed Impact Point</td>
-</tr>
-<tr>
-<td>CCRP</td>
-<td>Constantly Computed Release Point</td>
-</tr>
-<tr>
-<td>INS</td>
-<td>Inertial Navigation System</td>
-</tr>
-<tr>
-<td>GPS</td>
-<td>Global Positioning System</td>
-</tr>
-<tr>
-<td>EGI</td>
-<td>Embedded GPS INS</td>
-</tr>
-<tr>
-<td>TAC</td>
-<td>Tacan</td>
-</tr>
-<tr>
-<td>ILS</td>
-<td>Instrument Landing System</td>
-</tr>
-<tr>
-<td>VOR</td>
-<td>VHF Omnidirectional Radio Range</td>
-</tr>
-<tr>
-<td>DTC</td>
-<td>Data Cartridge</td>
-</tr>
-<tr>
-<td>DTS</td>
-<td>Data Transfer System</td>
-</tr>
-<tr>
-<td>TCAS</td>
-<td>Traffic Collision Avoidance System</td>
-</tr>
-</tbody>
-</table>
+<h2 id="flight-plans">Flight Plans</h2>
+<p>The T-38C will automatically convert the waypoints set in the mission editor into flight plan 0.<br />
+You can preset a maximum of 69 waypoints, any more will be excluded from the jet. Additional flight plans can be configured externally in the DTC folder (TODO link this)</p>
+<figure>
+<p><img alt="alt text" src="../images/me-routes.png" /></p>
+<figcaption>
+<p>DCS Mission Editor Route Editor</p>
+</figcaption>
+</figure>
+<hr />
+<h2 id="training-zones">Training Zones</h2>
+<p>(TODO ADD INSTRUCTIONS FOR THIS)</p>
+<p>Can be drawn from mission editor (expand on specifics)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Due to how DCS handles mfd drawings, our implementation of training zones supports a maximum of 20 zones, and 20 points per zone.<br />
+The real jet supports 50 zones, and 50 points per zone.<br />
+<em>This increases performance and decreases memory usage noticably, without impacting gameplay meaningfully</em></p>
+</div>
+<hr />
+<h2 id="low-level-routes">Low Level Routes</h2>
+<hr />
+<h2 id="no-fly-zones">No Fly Zones</h2>
+<hr />
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../extras/navigraph/" class="btn btn-neutral float-left" title="Navigraph"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../dtc-folder/" class="btn btn-neutral float-left" title="External DTC Folder"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../paintkit/" class="btn btn-neutral float-right" title="Livery Customization">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -192,8 +169,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../extras/navigraph/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../dtc-folder/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../paintkit/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

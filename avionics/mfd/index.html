@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Appendix B - DCS: T-38C Manual</title>
+    <title>MFD - DCS: T-38C Manual</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Appendix B";
-        var mkdocs_page_input_path = "appendices\\appendix_b.md";
+        var mkdocs_page_name = "MFD";
+        var mkdocs_page_input_path = "avionics\\mfd.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,8 +44,14 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Avionics</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../avionics/mfd/">MFD</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">MFD</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#primary-gauges">Primary Gauges</a>
+    </li>
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Extras</span></p>
@@ -60,12 +66,8 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Appendices</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Appendix B</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#abreviations">Abreviations</a>
-    </li>
-    </ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../appendices/appendix_b/">Appendix B</a>
                   </li>
               </ul>
       </div>
@@ -82,8 +84,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Appendices</li>
-      <li class="breadcrumb-item active">Appendix B</li>
+          <li class="breadcrumb-item">Avionics</li>
+      <li class="breadcrumb-item active">MFD</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -92,84 +94,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="appendix-b">Appendix B</h1>
-<hr />
-<h2 id="abreviations">Abreviations</h2>
-<table>
-<thead>
-<tr>
-<th>Short</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BSA</td>
-<td>Basic Surface Attack</td>
-</tr>
-<tr>
-<td>BFM</td>
-<td>Basic Fighter Maneuvers</td>
-</tr>
-<tr>
-<td>A/A</td>
-<td>Air to Air</td>
-</tr>
-<tr>
-<td>A/G</td>
-<td>Air to Ground</td>
-</tr>
-<tr>
-<td>CCIP</td>
-<td>Constantly Computed Impact Point</td>
-</tr>
-<tr>
-<td>CCRP</td>
-<td>Constantly Computed Release Point</td>
-</tr>
-<tr>
-<td>INS</td>
-<td>Inertial Navigation System</td>
-</tr>
-<tr>
-<td>GPS</td>
-<td>Global Positioning System</td>
-</tr>
-<tr>
-<td>EGI</td>
-<td>Embedded GPS INS</td>
-</tr>
-<tr>
-<td>TAC</td>
-<td>Tacan</td>
-</tr>
-<tr>
-<td>ILS</td>
-<td>Instrument Landing System</td>
-</tr>
-<tr>
-<td>VOR</td>
-<td>VHF Omnidirectional Radio Range</td>
-</tr>
-<tr>
-<td>DTC</td>
-<td>Data Cartridge</td>
-</tr>
-<tr>
-<td>DTS</td>
-<td>Data Transfer System</td>
-</tr>
-<tr>
-<td>TCAS</td>
-<td>Traffic Collision Avoidance System</td>
-</tr>
-</tbody>
-</table>
+                <h1 id="multi-function-display-mfd">Multi Function Display (MFD)</h1>
+<h2 id="overview">Overview</h2>
+<p>Each Cockpit has an MFD in front of the pilot. The MFD displays information such as:</p>
+<ul>
+<li>Basic flight instruments</li>
+<li>Navigation data</li>
+<li>Weapons data</li>
+</ul>
+<p><img alt="alt text" src="../images/mfd.png" /></p>
+<blockquote>
+<p>T-38C Multi-Function Display button layout and naming scheme</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above image shows the naming scheme for the MFD buttons (MOSBs). Further sections of the manual will reference the buttons as such.</p>
+</div>
+<p>Pressing MB1 will return you to the main menu (MENU1) at any time. Pressing any MOSB next to the displayed text will perform the labelled action, either switching pages, selecting data, or scrolling a list.</p>
+<h2 id="primary-gauges">Primary Gauges</h2>
+<p>The T-38C displays airspeed, altitude and attitude on all MFD displays. In addition, on the PFR, HSD and TSD pages (TODO add links) Angle of Attack and Vertical Acceleration (G Meter) are shown</p>
+<p><img alt="alt text" src="../images/primary_gauges.png" /></p>
+<p><em>The 5 primary digital gauges</em></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../extras/navigraph/" class="btn btn-neutral float-left" title="Navigraph"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../extras/dtc-folder/" class="btn btn-neutral float-right" title="External DTC Folder">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -192,8 +143,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../extras/navigraph/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../../extras/dtc-folder/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
