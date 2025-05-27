@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>MFD - DCS: T-38C Manual</title>
+    <title>Navigation - DCS: T-38C Manual</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "MFD";
-        var mkdocs_page_input_path = "avionics\\mfd.md";
+        var mkdocs_page_name = "Navigation";
+        var mkdocs_page_input_path = "avionics\\navigation.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -47,15 +47,33 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../hotas/">HOTAS</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">MFD</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../mfd/">MFD</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Navigation</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    <li class="toctree-l2"><a class="reference internal" href="#egi">EGI</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dest-points">DEST Points</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dest-point-reservations">DEST Point Reservations</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#primary-gauges">Primary Gauges</a>
+    <li class="toctree-l4"><a class="reference internal" href="#editing-dest-points">Editing DEST Points</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flight-plans">Flight Plans</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#fpl-mfd-page">FPL MFD Page</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vor">VOR</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tacan">TACAN</a>
     </li>
     </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../navigation/">Navigation</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Weapons</span></p>
@@ -98,7 +116,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Avionics</li>
-      <li class="breadcrumb-item active">MFD</li>
+      <li class="breadcrumb-item active">Navigation</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -107,33 +125,127 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="multi-function-display-mfd">Multi Function Display (MFD)</h1>
-<h2 id="overview">Overview</h2>
-<p>Each Cockpit has an MFD in front of the pilot. The MFD displays information such as:</p>
-<ul>
-<li>Basic flight instruments</li>
-<li>Navigation data</li>
-<li>Weapons data</li>
-</ul>
-<p><img alt="alt text" src="../images/mfd.png" /></p>
-<blockquote>
-<p>T-38C Multi-Function Display button layout and naming scheme</p>
-</blockquote>
+                <h1 id="navigation">Navigation</h1>
+<h2 id="egi">EGI</h2>
+<h3 id="dest-points">DEST Points</h3>
+<p>DEST points act as user defined waypoints in the T-38C. They can be steered to by selecting the 3 Digit ID into row 1 of the UFCP using the 3 digit identifier.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The above image shows the naming scheme for the MFD buttons (MOSBs). Further sections of the manual will reference the buttons as such.</p>
+<p>Waypoints with less than 3 digits can be entered with padded zeros. For example:<br />
+<strong>Waypoint 1:</strong> 001, <strong>Waypoint 24:</strong> 024, <strong>Waypoint 599:</strong> 599</p>
 </div>
-<p>Pressing MB1 will return you to the main menu (MENU1) at any time. Pressing any MOSB next to the displayed text will perform the labelled action, either switching pages, selecting data, or scrolling a list.</p>
-<h2 id="primary-gauges">Primary Gauges</h2>
-<p>The T-38C displays airspeed, altitude and attitude on all MFD displays. In addition, on the PFR, HSD and TSD pages (TODO add links) Angle of Attack and Vertical Acceleration (G Meter) are shown</p>
-<p><img alt="alt text" src="../images/primary_gauges.png" /></p>
-<p><em>The 5 primary digital gauges</em></p>
+<h4 id="dest-point-reservations">DEST Point Reservations</h4>
+<p>Specific DEST points have specific roles, as seen in the table below.</p>
+<figure>
+<table>
+<thead>
+<tr>
+<th>Points</th>
+<th>Primary Use</th>
+<th>Planning Programmable</th>
+<th>Add/Change in Aircraft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000</td>
+<td>EGI Start Point</td>
+<td>No</td>
+<td>Yes, only if EGI OFF</td>
+</tr>
+<tr>
+<td>001-350</td>
+<td>Flight Plans 1</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>351-399</td>
+<td>User Defined</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>400-499</td>
+<td>User Defined</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>500-599</td>
+<td>PPA (TODO WHAT IS THIS)</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>600-604</td>
+<td>A/G Targets</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>605-610</td>
+<td>Mark Points</td>
+<td>No</td>
+<td>Yes (using MRK)</td>
+</tr>
+<tr>
+<td>611-649</td>
+<td>Future Growth</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>650-999</td>
+<td>Flight Plans 2</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<figcaption>
+<p>DEST point reservations</p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Waypoints 611-649 are not editiable, and are skipped in the database all together.</p>
+</div>
+<h4 id="editing-dest-points">Editing DEST Points</h4>
+<p>DEST Points are editable on the UFCP by pressing the DST Key, and support Lat Long Decimal Minutes Seconds (DMS) or UTM/MGRS format (Not currently implemented). The list of waypoints can be viewed on the DEST page of the MFD, from Menu 1.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a quick summary, full instructions to come later (TODO)</p>
+</div>
+<ol>
+<li>Click <strong>DST</strong> on the UFCP.</li>
+<li>Select the waypoint you want to edit (e.g., waypoint 10 is entered as 010).</li>
+<li>Enter coordinates in Lat/Long DMS by pressing the left button of the relevant UFCP row.</li>
+<li>Swap E/W or N/S by pressing the right button of the relevant row.</li>
+<li>Enter altitude in the lower left.</li>
+</ol>
+<hr />
+<h3 id="flight-plans">Flight Plans</h3>
+<p>The T-38C supports 20 flight plans, labelled 0-19. These flight plans can be viewed on the FPL page by switching to MENU1 on the MFD, then pressing ML4 on the MFD.</p>
+<h4 id="fpl-mfd-page">FPL MFD Page</h4>
+<p>ML2 and ML3 allow you to scroll up and down 10 waypoints, ML4 and ML6 move the selection arrow up and down by 1. ML5 selects the current flight plan, and current point of the flight plan to be the current EGI destination.
+MB5 and MB6 allow switching between viewed flight plans, this is reflected by the heading box below the ADI showing the name and number
+MB2 swaps the FPL page from COORD to ID mode. The default mode is COORD, although ID mode is more commonly used.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The FPL page on the MFD can also be accessed by pressing the F key on the UFCP anytime text entry is not selected.</p>
+</div>
+<hr />
+<h2 id="vor">VOR</h2>
+<hr />
+<h2 id="tacan">TACAN</h2>
+<hr />
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../hotas/" class="btn btn-neutral float-left" title="HOTAS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../navigation/" class="btn btn-neutral float-right" title="Navigation">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mfd/" class="btn btn-neutral float-left" title="MFD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../weapons/overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -156,10 +268,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../hotas/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../mfd/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../navigation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../weapons/overview/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
