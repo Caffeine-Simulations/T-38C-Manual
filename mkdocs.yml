@@ -12,11 +12,17 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Avionics:
+      - HOTAS: avionics/hotas.md
       - MFD: avionics/mfd.md
+      - Navigation: avionics/navigation.md
+  - Weapons:
+      - Overview: weapons/overview.md
+      - Air to Air: weapons/air_to_air.md
+      - Air to Ground: weapons/air_to_ground.md
   - Extras:
       - External DTC Folder: extras/dtc-folder.md
       - Mission Editor: extras/mission_editor.md
-      - Livery Customization: extras/paintkit.md      
+      - Livery Customization: extras/paintkit.md
       - Navigraph: extras/navigraph.md
   - Appendices:
       - Appendix B: appendices/appendix_b.md
