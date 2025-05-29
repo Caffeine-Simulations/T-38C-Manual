@@ -185,10 +185,61 @@ Waypoints 611-649 are not supported by the jet, use other numbers.</p>
 </div>
 <hr />
 <h2 id="training-zone-database">Training Zone Database</h2>
-<p>TODO, implementation needed</p>
+<p>Creating a <code>TRAINING ZONES/&lt;Map Name&gt;/ZONES.lua</code> file allows for the creation of real world training zones. Either create a table yourself, or use a tool such as ChatGPT to convert the data into the required format.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Training Zones can also be configured in the mission editor TODO add link</p>
+</div>
+<p>You can enter coordinates in any of the formats listed at the top of the file, then specify the format you have used into the <code>format</code> field. This will tell the jet which converter is needed to convert the data into DCS's coordinate system. The drawing of the zones will happen automatically from there.</p>
+<pre><code class="language-lua">local format = {
+    [&quot;DECIMAL&quot;] = 1,
+    [&quot;DMM&quot;] = 2,
+    -- TODO add more formats, they need a corresponding conversion function in mdp_ZONE_database.lua
+}
+
+
+local zones = {
+    [1] = {
+        name    = &quot;ATCAA1&quot;,     -- This will show up in the Zone page
+        enabled = true,         -- This toggles whether it will be enabled by default
+        format = format.DMM,    -- Used to determine how to convert the values below
+        points  = {             -- The corners of the zones
+            [1] = { lat = 1250.0, lon = 14510.0 },
+            [2] = { lat = 1125.0, lon = 14700.0 },
+            [3] = { lat = 1030.0, lon = 14700.0 },
+            [4] = { lat = 1030.0, lon = 14520.0 },
+            [5] = { lat = 1250.0, lon = 14500.0 },
+            [6] = { lat = 1250.0, lon = 14510.0 },
+        },
+    },
+
+    [2] = {                     -- Repeat for as many zones as required
+        name    = &quot;ATCAA2&quot;,
+        enabled = true,
+        format = format.DMM,    -- You can have different formats for each zone
+        points  = {
+            [1] = { lat = 1250.0, lon = 14410.0 },
+            [2] = { lat = 1250.0, lon = 14440.0 },
+            [3] = { lat = 1030.0, lon = 14455.0 },
+            [4] = { lat = 1030.0, lon = 14300.0 },
+            [5] = { lat = 1220.0, lon = 14200.0 },
+            [6] = { lat = 1250.0, lon = 14410.0 },
+        },
+    },
+}
+
+-- leave these lines untouched
+local function getZones()
+    return zones
+end
+
+return {
+    getZones = getZones,
+}
+</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Setting the wrong format will cause the lines to not be visible, although the zones will show up on the ZONE page.</p>
 </div>
 <hr />
 <h2 id="dtclua">DTC.lua</h2>
