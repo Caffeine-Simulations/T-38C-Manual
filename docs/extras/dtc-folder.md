@@ -135,6 +135,64 @@ return {
 
 ---
 
+## Radios
+Creating a `RADIOS/<Map Name>/PRESETS.lua` file allows you to set radio frequencies for both radios. If this file is not set, the jet will default to the mission editor defaults from `T-38C.lua` in the mods files. 
+
+```lua
+local UHF = {       -- Customise up to 20 presets for UHF
+    [1]  = 254.325, -- ATIS
+    [2]  = 256.700, -- ANDERSEN CLEARANCE
+    [3]  = 275.800, -- ANDERSEN GROUND
+    [4]  = 233.700, -- ANDERSEN TOWER
+    [5]  = 279.500, -- GUAM CERAP (PRIMARY)
+    [6]  = 269.000, -- GUAM CERAP (ALTERNATE)
+    [7]  = 239.300, -- GUAM APP / DEP
+    [8]  = 377.800, -- SUPERVISOR OF FLYING
+    [9]  = 372.200, -- PILOT TO DISPATCH
+    [10] = 363.325, -- EMERGENCY APPROACH
+    [11] = 238.300, -- NWF
+    [12] = 311.000, -- 36 WG CP (PRIMARY)
+    [13] = 321.000, -- 36 WG CP (ALTERNATE)
+    [14] = 349.400, -- AMC CP
+    [15] = 346.600, -- PMSV METRO
+    [16] = 252.100, -- BOMBER OPS
+    [17] = 375.725, -- TANKER OPS
+    [18] = 379.400, -- FIGHTER OPS
+    [19] = 355.200, -- W-II COMMON
+    [20] = 364.200, -- W-12 / W-517 COMMON
+}
+
+local VHF = {       -- Customise up to 20 presets for UHF
+    [1]  = 118.175, -- ATIS
+    [2]  = 126.725, -- ANDERSEN CLEARANCE
+    [3]  = 121.700, -- ANDERSEN GROUND
+    [4]  = 126.200, -- ANDERSEN TOWER
+    [5]  = 118.700, -- GUAM CERAP (PRIMARY)
+    [6]  = 119.800, -- GUAM CERAP (ALTERNATE)
+    [7]  = 120.500, -- GUAM APP / DEP
+    [9]  = 139.300, -- PILOT TO DISPATCH
+    [11] = 139.250, -- NWF
+    [14] = 128.000, -- AMC CP
+}
+
+-- leave these untouched
+local function getUHF()
+    return UHF
+end
+
+local function getVHF()
+    return VHF
+end
+
+return {
+    getUHF = getUHF,
+    getVHF = getVHF
+}
+```
+
+!!! Note
+    You do not need to set all 20 frequencies, only the onces set are modified, all others will be set to mission editor defaults.
+
 ## DTC.lua
 DTC.lua allows you to configure various settings automatically, Such as which HUD mode is default, Callsign, Warning modes, and various other configurable settings. This only changes the defaults, all values can still be changed using the UFCP.
 
