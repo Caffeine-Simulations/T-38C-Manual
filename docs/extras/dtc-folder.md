@@ -76,9 +76,63 @@ TODO
 ---
 
 ## Training Zone Database 
-TODO, implementation needed
+Creating a `TRAINING ZONES/<Map Name>/ZONES.lua` file allows for the creation of real world training zones. Either create a table yourself, or use a tool such as ChatGPT to convert the data into the required format.
+
 !!! Note
     Training Zones can also be configured in the mission editor TODO add link
+
+You can enter coordinates in any of the formats listed at the top of the file, then specify the format you have used into the `format` field. This will tell the jet which converter is needed to convert the data into DCS's coordinate system. The drawing of the zones will happen automatically from there.
+
+```lua
+local format = {
+    ["DECIMAL"] = 1,
+    ["DMM"] = 2,
+    -- TODO add more formats, they need a corresponding conversion function in mdp_ZONE_database.lua
+}
+
+
+local zones = {
+    [1] = {
+        name    = "ATCAA1",     -- This will show up in the Zone page
+        enabled = true,         -- This toggles whether it will be enabled by default
+        format = format.DMM,    -- Used to determine how to convert the values below
+        points  = {             -- The corners of the zones
+            [1] = { lat = 1250.0, lon = 14510.0 },
+            [2] = { lat = 1125.0, lon = 14700.0 },
+            [3] = { lat = 1030.0, lon = 14700.0 },
+            [4] = { lat = 1030.0, lon = 14520.0 },
+            [5] = { lat = 1250.0, lon = 14500.0 },
+            [6] = { lat = 1250.0, lon = 14510.0 },
+        },
+    },
+
+    [2] = {                     -- Repeat for as many zones as required
+        name    = "ATCAA2",
+        enabled = true,
+        format = format.DMM,    -- You can have different formats for each zone
+        points  = {
+            [1] = { lat = 1250.0, lon = 14410.0 },
+            [2] = { lat = 1250.0, lon = 14440.0 },
+            [3] = { lat = 1030.0, lon = 14455.0 },
+            [4] = { lat = 1030.0, lon = 14300.0 },
+            [5] = { lat = 1220.0, lon = 14200.0 },
+            [6] = { lat = 1250.0, lon = 14410.0 },
+        },
+    },
+}
+
+-- leave these lines untouched
+local function getZones()
+    return zones
+end
+
+return {
+    getZones = getZones,
+}
+```
+!!! Warning
+    Setting the wrong format will cause the lines to not be visible, although the zones will show up on the ZONE page.
+
 ---
 
 ## DTC.lua
